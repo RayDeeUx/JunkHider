@@ -22,9 +22,8 @@ std::unordered_set<std::string> headerSprites = {
 	"topListsLabel_001.png"
 };
 
+#ifdef GEODE_IS_WINDOWS GEODE_IS_ANDROID
 class $modify(LevelSelectLayer) {
-	#ifdef GEODE_IS_MACOS
-	#endif
 	bool init(int p0) {
 		if (!LevelSelectLayer::init(p0)) return false;
         if (!Mod::get()->getSettingValue<bool>("enabled")) return true;
@@ -35,6 +34,7 @@ class $modify(LevelSelectLayer) {
 		return true;
 	}
 };
+#endif
 
 class $modify(LevelSearchLayer) {
 	bool init(int p0) {
