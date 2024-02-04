@@ -43,19 +43,19 @@
 			"default": false
 		},
 		"hideNG": {
-			"name": "Hide NG Button from Main Menu",
+			"name": "Hide NG from Main Menu",
 			"description": "Disclaimer: For Windows users ONLY.\nDoes not remove this button; only hides it.",
 			"type": "bool",
 			"default": false
 		},
 		"hideAchievements": {
-			"name": "Hide Achievements Button from Main Menu",
+			"name": "Hide Achievements from Main Menu",
 			"description": "Disclaimer: For Windows users ONLY.\nDoes not remove this button; only hides it.",
 			"type": "bool",
 			"default": false
 		},
 		"hideStats": {
-			"name": "Hide Stats Button from Main Menu",
+			"name": "Hide Stats from Main Menu",
 			"description": "Disclaimer: For Windows users ONLY.\nDoes not remove this button; only hides it.",
 			"type": "bool",
 			"default": false

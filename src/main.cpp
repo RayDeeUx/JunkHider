@@ -24,7 +24,8 @@ std::unordered_set<std::string> headerSprites = {
 class $modify(LevelSelectLayer) {
 	bool init(int p0) {
 		if (!LevelSelectLayer::init(p0)) return false;
-        if (!Mod::get()->getSettingValue<bool>("enabled") && Mod::get()->getSettingValue<bool>("hideLevelSelectJunk")) return false;
+        if (!Mod::get()->getSettingValue<bool>("enabled")) return true;
+		if (!Mod::get()->getSettingValue<bool>("hideLevelSelectJunk")) return true;
 		getChildOfType<CCMenu>(this, 0)->setScale(0);
 		getChildOfType<GJGroundLayer>(this, 0)->setScale(0);
 		typeinfo_cast<CCSpriteBatchNode*>(getChildOfType<BoomScrollLayer>(this, 0)->getChildren()->objectAtIndex(1))->setVisible(false);
@@ -35,8 +36,9 @@ class $modify(LevelSelectLayer) {
 class $modify(LevelSearchLayer) {
 	bool init(int p0) {
 		if (!LevelSearchLayer::init(p0)) return false;
-        if (!(Mod::get()->getSettingValue<bool>("enabled") && Mod::get()->getSettingValue<bool>("hideClearSearch"))) return false;
-		typeinfo_cast<CCMenuItemSpriteExtra*>(getChildOfType<CCMenu>(this, 1)->getChildren()->objectAtIndex(2))->setScale(0); // hide clear search
+        if (!(Mod::get()->getSettingValue<bool>("enabled"))) return true;
+		if (Mod::get()->getSettingValue<bool>("hideClearSearch"))
+			typeinfo_cast<CCMenuItemSpriteExtra*>(getChildOfType<CCMenu>(this, 1)->getChildren()->objectAtIndex(2))->setScale(0); // hide clear search
 		return true;
 	}
 };
