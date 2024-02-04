@@ -1,6 +1,7 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/LevelSearchLayer.hpp>
 #include <Geode/modify/LevelSelectLayer.hpp>
+#include <Geode/modify/DailyLevelPage.hpp>
 #include <Geode/modify/CCSprite.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 
@@ -37,8 +38,30 @@ class $modify(LevelSearchLayer) {
 	bool init(int p0) {
 		if (!LevelSearchLayer::init(p0)) return false;
         if (!(Mod::get()->getSettingValue<bool>("enabled"))) return true;
-		if (Mod::get()->getSettingValue<bool>("hideClearSearch"))
-			typeinfo_cast<CCMenuItemSpriteExtra*>(getChildOfType<CCMenu>(this, 1)->getChildren()->objectAtIndex(2))->setScale(0); // hide clear search
+		if (!(Mod::get()->getSettingValue<bool>("hideClearSearch"))) return true;
+		typeinfo_cast<CCMenuItemSpriteExtra*>(getChildOfType<CCMenu>(this, 1)->getChildren()->objectAtIndex(2))->setScale(0); // hide clear search
+		return true;
+	}
+};
+
+class $modify(MenuLayer) {
+	bool init() {
+		if (!MenuLayer::init()) return false;
+        if (!(Mod::get()->getSettingValue<bool>("enabled"))) return true;
+		if (Mod::get()->getSettingValue<bool>("hideNG")) this->getChildByIDRecursive("newgrounds-button")->setScale(0); // hideNG
+		if (Mod::get()->getSettingValue<bool>("hideAchievements")) this->getChildByIDRecursive("achievements-button")->setScale(0); // hideAchievements
+		if (Mod::get()->getSettingValue<bool>("hideStats")) this->getChildByIDRecursive("stats-button")->setScale(0); // hideStats
+		return true;
+	}
+};
+
+class $modify(DailyLevelPage) {
+	bool init(GJTimedLevelType p0) {
+		if (!DailyLevelPage::init(p0)) return false;
+		if (!Loader::get()->isModLoaded("geode.node-ids")) return true;
+        if (!(Mod::get()->getSettingValue<bool>("enabled"))) return true;
+        if (!(Mod::get()->getSettingValue<bool>("hideDailyWeeklyTime"))) return true;
+		this->getChildByIDRecursive("DailyLevelNode")->getChildByIDRecursive("time-label")->setScale(0);
 		return true;
 	}
 };
@@ -53,15 +76,4 @@ class $modify(CCSprite) {
             sprite->setScale(0); // hide header sprites
         return sprite;
     }
-};
-
-class $modify(MenuLayer) {
-	bool init() {
-		if (!MenuLayer::init()) return false;
-        if (!(Mod::get()->getSettingValue<bool>("enabled"))) return true;
-		if (Mod::get()->getSettingValue<bool>("hideNG")) this->getChildByIDRecursive("newgrounds-button")->setScale(0); // hideNG
-		if (Mod::get()->getSettingValue<bool>("hideAchievements")) this->getChildByIDRecursive("achievements-button")->setScale(0); // hideAchievements
-		if (Mod::get()->getSettingValue<bool>("hideStats")) this->getChildByIDRecursive("stats-button")->setScale(0); // hideStats
-		return true;
-	}
 };

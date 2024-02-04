@@ -11,6 +11,13 @@
 	"name": "JunkHider",
 	"developer": "RayDeeUx",
 	"description": "Hides specific UI elements across various GD menus that aren't worth hiding as standalone Geode mods.",
+	"dependencies": [
+		{
+			"id": "geode.node-ids",
+			"version": ">=1.1.4",
+			"importance": "suggested"
+		}
+	],
 	"settings": {
 		"enabled": {
 			"name": "Enabled",
@@ -39,6 +46,12 @@
 		"hideHeaderSprites": {
 			"name": "Hide Header Sprites",
 			"description": "Hides header sprites from the Top Lists and Featured Level menus.",
+			"type": "bool",
+			"default": false
+		},
+		"hideDailyWeeklyTime": {
+			"name": "Hide Time from Daily/Weekly Level",
+			"description": "Hides the redundant countdown text for the next daily/weekly level after claiming the daily/weekly level bonus.",
 			"type": "bool",
 			"default": false
 		},
