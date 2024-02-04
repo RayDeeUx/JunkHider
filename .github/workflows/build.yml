@@ -34,7 +34,7 @@ jobs:
 
       - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
-        with:
+        with: 'nightly'
           combine: true
           target: ${{ matrix.config.target }}
       
@@ -48,6 +48,6 @@ jobs:
         id: build
 
       - uses: actions/upload-artifact@v3
-        with:
+        with: 'nightly'
           name: Build Output
           path: ${{ steps.build.outputs.build-output }}
