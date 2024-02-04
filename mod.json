@@ -51,7 +51,7 @@
 		},
 		"hideDailyWeeklyTime": {
 			"name": "Hide Time from Daily/Weekly Level",
-			"description": "Hides the redundant countdown text for the next daily/weekly level after claiming the daily/weekly level bonus.",
+			"description": "Hides the redundant countdown text for the next daily/weekly level after claiming the daily/weekly level bonus.\nREQUIRES GEODE TEAM'S \"NODE IDS\" MOD TO WORK.",
 			"type": "bool",
 			"default": false
 		},
