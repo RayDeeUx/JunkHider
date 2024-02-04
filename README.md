@@ -7,7 +7,7 @@ See the `about.md` in-game for more info.
 Hide the "clear search" button. Useful for Android users whose muscle memory hasn't adjusted to 2.2 yet and don't want to clear their search bar.
 ![demoOne](https://github.com/RayDeeUx/JunkHider/blob/main/demoOne.png)
 
-Hide useless junk on the main level select menu that other mods haven't gotten to yet. [Does not work on macOS.]
+Hide useless junk on the main level select menu that other mods haven't gotten to yet. [Does not work on macOS, and to hide remaining junk please use Undefined0's GDTweaks if you're on Windows.]
 ![demoTwo](https://github.com/RayDeeUx/JunkHider/blob/main/demoTwo.png)
 
 Hide profile hints, including the ones for social media and levels vs lists. [Compatible with other mods!]
