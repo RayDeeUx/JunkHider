@@ -27,7 +27,7 @@
 		},
 		"hideLevelSelectJunk": {
 			"name": "Hide Level Select Junk",
-			"description": "Hides the dots, ground, and \"Download the Soundtrack\" text from the main level select menu.",
+			"description": "Hides the dots, ground, and \"Download the Soundtrack\" text from the main level select menu.\nDOES NOT WORK ON MACOS.",
 			"type": "bool",
 			"default": true
 		},
