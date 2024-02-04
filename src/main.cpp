@@ -23,7 +23,8 @@ std::unordered_set<std::string> headerSprites = {
 };
 
 class $modify(LevelSelectLayer) {
-	#ifdef GEODE_IS_WINDOWS
+	#ifdef GEODE_IS_MACOS
+	#endif
 	bool init(int p0) {
 		if (!LevelSelectLayer::init(p0)) return false;
         if (!Mod::get()->getSettingValue<bool>("enabled")) return true;
@@ -33,18 +34,6 @@ class $modify(LevelSelectLayer) {
 			typeinfo_cast<CCSpriteBatchNode*>(getChildOfType<BoomScrollLayer>(this, 0)->getChildren()->objectAtIndex(1))->setVisible(false);
 		return true;
 	}
-	#endif
-	#ifdef GEODE_IS_ANDROID
-	bool init(int p0) {
-		if (!LevelSelectLayer::init(p0)) return false;
-        if (!Mod::get()->getSettingValue<bool>("enabled")) return true;
-		if (!Mod::get()->getSettingValue<bool>("hideLevelSelectJunk")) return true;
-			getChildOfType<CCMenu>(this, 0)->setScale(0);
-			getChildOfType<GJGroundLayer>(this, 0)->setScale(0);
-			typeinfo_cast<CCSpriteBatchNode*>(getChildOfType<BoomScrollLayer>(this, 0)->getChildren()->objectAtIndex(1))->setVisible(false);
-		return true;
-	}
-	#endif
 };
 
 class $modify(LevelSearchLayer) {
