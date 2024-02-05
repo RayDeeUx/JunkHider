@@ -63,6 +63,7 @@ class $modify(DailyLevelPage) {
 		if (!Loader::get()->isModLoaded("geode.node-ids")) return true;
         if (!(Mod::get()->getSettingValue<bool>("enabled"))) return true;
         if (!(Mod::get()->getSettingValue<bool>("hideDailyWeeklyTime"))) return true;
+		if (getChildByIDRecursive("DailyLevelNode")->getChildrenCount() != 2) return true;
 		this->getChildByIDRecursive("DailyLevelNode")->getChildByIDRecursive("time-label")->setScale(0);
 		return true;
 	}
