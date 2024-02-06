@@ -22,7 +22,7 @@ std::unordered_set<std::string> headerSprites = {
 	"topListsLabel_001.png"
 };
 
-#ifdef GEODE_IS_WINDOWS GEODE_IS_ANDROID
+#if defined(GEODE_IS_WINDOWS) || defined(GEODE_IS_ANDROID)
 class $modify(LevelSelectLayer) {
 	bool init(int p0) {
 		if (!LevelSelectLayer::init(p0)) return false;
