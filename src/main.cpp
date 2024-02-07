@@ -53,6 +53,7 @@ class $modify(MenuLayer) {
 		if (Mod::get()->getSettingValue<bool>("hideNG")) this->getChildByIDRecursive("newgrounds-button")->setVisible(false); // hideNG
 		if (Mod::get()->getSettingValue<bool>("hideAchievements")) this->getChildByIDRecursive("achievements-button")->setVisible(false); // hideAchievements
 		if (Mod::get()->getSettingValue<bool>("hideStats")) this->getChildByIDRecursive("stats-button")->setVisible(false); // hideStats
+		this->updateLayout();
 		return true;
 	}
 };
