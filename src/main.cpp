@@ -50,9 +50,10 @@ class $modify(MenuLayer) {
 	bool init() {
 		if (!MenuLayer::init()) return false;
         if (!(Mod::get()->getSettingValue<bool>("enabled"))) return true;
-		if (Mod::get()->getSettingValue<bool>("hideNG")) this->getChildByIDRecursive("newgrounds-button")->setVisible(false); // hideNG
-		if (Mod::get()->getSettingValue<bool>("hideAchievements")) this->getChildByIDRecursive("achievements-button")->setVisible(false); // hideAchievements
-		if (Mod::get()->getSettingValue<bool>("hideStats")) this->getChildByIDRecursive("stats-button")->setVisible(false); // hideStats
+		auto bottomMenu = this->getChildByID("bottom-menu");
+		if (Mod::get()->getSettingValue<bool>("hideNG") && !Loader::get()->isModLoaded("riley.nogrounds")) bottomMenu->removeChildByID("newgrounds-button"); // hideNG
+		if (Mod::get()->getSettingValue<bool>("hideAchievements")) bottomMenu->removeChildByID("achievements-button"); // hideAchievements
+		if (Mod::get()->getSettingValue<bool>("hideStats")) bottomMenu->removeChildByID("stats-button"); // hideStats
 		this->updateLayout();
 		return true;
 	}
