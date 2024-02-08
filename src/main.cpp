@@ -54,7 +54,7 @@ class $modify(MenuLayer) {
 		if (Mod::get()->getSettingValue<bool>("hideNG") && !Loader::get()->isModLoaded("riley.nogrounds")) bottomMenu->removeChildByID("newgrounds-button"); // hideNG
 		if (Mod::get()->getSettingValue<bool>("hideAchievements")) bottomMenu->removeChildByID("achievements-button"); // hideAchievements
 		if (Mod::get()->getSettingValue<bool>("hideStats")) bottomMenu->removeChildByID("stats-button"); // hideStats
-		this->updateLayout();
+		bottomMenu->updateLayout();
 		return true;
 	}
 };
