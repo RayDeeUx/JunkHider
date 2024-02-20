@@ -10,7 +10,8 @@
 	"id": "raydeeux.junkhider",
 	"name": "JunkHider",
 	"developer": "RayDeeUx",
-	"description": "Hides specific UI elements across various GD menus that aren't worth hiding as standalone Geode mods.",
+	"description": "Hides various UI elements that aren't worth being standalone Geode mods.",
+	"repository": "https://github.com/RayDeeUx/JunkHider",
 	"dependencies": [
 		{
 			"id": "geode.node-ids",
